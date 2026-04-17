@@ -9,17 +9,17 @@ export default function Logo() {
       <img
         src="/logo-icon.png"
         alt="Sastech Consults"
-        className="w-9 h-9 object-contain group-hover:scale-110 transition-transform duration-300"
+        className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300"
       />
       <div className="flex flex-col leading-none">
-        <span 
-          className="text-lg font-bold tracking-tight text-slate-900 dark:text-white" 
+        <span
+          className="text-xl font-bold tracking-tight text-slate-900 dark:text-white"
           style={{ fontFamily: 'var(--font-outfit)' }}
         >
           Sastech
         </span>
-        <span 
-          className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#38bdf8] mt-0.5"
+        <span
+          className="text-[11px] uppercase font-bold tracking-[0.2em] text-[#38bdf8] mt-0.5"
           style={{ fontFamily: 'var(--font-inter)' }}
         >
           Consults
