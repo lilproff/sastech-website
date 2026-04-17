@@ -47,20 +47,6 @@
     color: #111827;
   }
 
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    opacity: 0.05;
-    pointer-events: none;
-    z-index: 9999;
-    /* Local neutral noise pattern */
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    filter: contrast(120%) brightness(120%);
-  }
 
   .dark body {
     background: #02040a;
@@ -119,16 +105,28 @@ html:not(.dark) {
 }
 
 .dark .glass, .glass-panel {
-  background: rgba(9, 12, 20, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.07);
   transition: all 0.3s ease;
+}
+
+html:not(.dark) .glass-panel {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .dark .glass:hover, .glass-panel:hover {
   border-color: rgba(56, 189, 248, 0.2);
-  background: rgba(18, 22, 34, 0.8);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.glass:hover {
+  border-color: rgba(56, 189, 248, 0.3);
 }
 
 /* ── MESH GRADIENT ── */

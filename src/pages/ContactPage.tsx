@@ -66,23 +66,72 @@ export default function ContactPage() {
             {/* Info Side */}
             <div className="space-y-12">
                <Reveal>
-                 <div className="space-y-8">
-                    {[
-                      { icon: "solar:letter-bold-duotone", title: "Email Intake", detail: "ayomidesholarin13@gmail.com", sub: "General & Technical Enquiries" },
-                      { icon: "solar:chat-round-dots-bold-duotone", title: "WhatsApp Direct", detail: "+234 [WhatsApp Available]", sub: "Qualifying Conversations" },
-                      { icon: "solar:clock-circle-bold-duotone", title: "SLA Response", detail: "Within 120 Minutes", sub: "Priority Business Hours (WAT)" },
-                    ].map(item => (
-                      <div key={item.title} className="flex items-start gap-6 group">
-                        <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center group-hover:bg-[#38bdf8]/10 transition-colors">
-                           <Icon icon={item.icon} className="text-2xl text-[#38bdf8]" />
-                        </div>
-                        <div>
-                           <p className="text-slate-900 dark:text-white font-bold text-sm mb-1">{item.title}</p>
-                           <p className="text-slate-800 dark:text-slate-200 text-lg font-bold mb-1">{item.detail}</p>
-                           <p className="text-slate-600 text-[10px] font-black uppercase tracking-widest">{item.sub}</p>
-                        </div>
+                 <div className="space-y-4">
+                    {/* Email */}
+                    <a
+                      href="mailto:ayomidesholarin13@gmail.com"
+                      className="flex items-center gap-5 p-5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 hover:border-[#38bdf8]/40 hover:bg-slate-50 dark:hover:bg-white/[0.06] transition-all group"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-[#38bdf8]/10 border border-[#38bdf8]/20 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                        <Icon icon="solar:letter-bold-duotone" className="text-2xl text-[#38bdf8]" />
                       </div>
-                    ))}
+                      <div className="flex-1 min-w-0">
+                        <p className="text-slate-900 dark:text-white font-bold text-sm mb-0.5">Email</p>
+                        <p className="text-slate-700 dark:text-slate-200 font-semibold text-sm truncate">ayomidesholarin13@gmail.com</p>
+                        <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest mt-0.5">General & Technical Enquiries</p>
+                      </div>
+                      <Icon icon="solar:arrow-right-up-linear" className="text-[#38bdf8] text-lg shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </a>
+
+                    {/* WhatsApp */}
+                    <a
+                      href="https://wa.me/2348022324523"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-5 p-5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 hover:border-[#25D366]/50 hover:bg-slate-50 dark:hover:bg-white/[0.06] transition-all group"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                        <Icon icon="solar:chat-round-dots-bold-duotone" className="text-2xl text-[#25D366]" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-slate-900 dark:text-white font-bold text-sm mb-0.5">WhatsApp</p>
+                        <p className="text-slate-700 dark:text-slate-200 font-semibold text-sm">+234 802 232 4523</p>
+                        <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest mt-0.5">Qualifying Conversations</p>
+                      </div>
+                      <Icon icon="solar:arrow-right-up-linear" className="text-[#25D366] text-lg shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </a>
+
+                    {/* SLA */}
+                    <div className="flex items-center gap-5 p-5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/10">
+                      <div className="w-12 h-12 rounded-xl bg-[#2dd4bf]/10 border border-[#2dd4bf]/20 flex items-center justify-center shrink-0">
+                        <Icon icon="solar:clock-circle-bold-duotone" className="text-2xl text-[#2dd4bf]" />
+                      </div>
+                      <div>
+                        <p className="text-slate-900 dark:text-white font-bold text-sm mb-0.5">Response Time</p>
+                        <p className="text-slate-700 dark:text-slate-200 font-semibold text-sm">Within 120 Minutes</p>
+                        <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest mt-0.5">Priority Business Hours (WAT)</p>
+                      </div>
+                    </div>
+
+                    {/* Quick action buttons */}
+                    <div className="flex gap-3 pt-1">
+                      <a
+                        href="https://wa.me/2348022324523"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#25D366] text-white font-bold text-xs tracking-wide hover:bg-[#1FAD55] transition-colors"
+                      >
+                        <Icon icon="solar:chat-round-dots-bold-duotone" className="text-base" />
+                        Message on WhatsApp
+                      </a>
+                      <a
+                        href="mailto:ayomidesholarin13@gmail.com"
+                        className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl border border-[#38bdf8] text-[#38bdf8] font-bold text-xs tracking-wide hover:bg-[#38bdf8]/10 transition-colors"
+                      >
+                        <Icon icon="solar:letter-bold-duotone" className="text-base" />
+                        Send an Email
+                      </a>
+                    </div>
                  </div>
                </Reveal>
 
