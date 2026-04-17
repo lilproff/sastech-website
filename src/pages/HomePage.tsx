@@ -373,49 +373,68 @@ export default function HomePage() {
             subtitle="Real results from real businesses we've worked with across Nigeria and beyond."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
             {[
               {
-                quote: "Sastech built our logistics dashboard in under 3 weeks. The AI agent alone saves my team hours every day. Absolutely worth it.",
-                name: "Tunde Adeyemi",
-                role: "Operations Director",
+                quote: "Sastech built us a full automation system that transformed how we run our logistics operations. AI agents now handle tasks that used to take our team hours every single day.",
+                name: "Mr Badmus",
+                role: "MD",
                 company: "Kamilight Global Logistics",
-                initials: "TA",
+                tag: "Build Automation",
+                initials: "MB",
                 color: "#38bdf8",
               },
               {
-                quote: "The WhatsApp chatbot they built handles 80% of our customer enquiries automatically. Our support team can finally focus on real issues.",
-                name: "Chisom Okafor",
-                role: "CEO",
-                company: "Revenue Engines Ltd",
-                initials: "CO",
+                quote: "They delivered our professional website exactly as we envisioned it. Clean, fast, and it represents our brand perfectly. The whole process was smooth from start to finish.",
+                name: "Mr Sholarin Olugbenga",
+                role: "Director",
+                company: "Socca Professional Services",
+                tag: "Web Development",
+                link: "soccaprofessionalservices.com.ng",
+                initials: "SO",
                 color: "#2dd4bf",
               },
               {
-                quote: "Professional, fast, and they actually understand Nigerian business context. The e-commerce platform with Paystack integration works flawlessly.",
-                name: "Fatima Bello",
+                quote: "The Erlivus app they built is exactly what the Nigerian market needed — a sleek, reliable trade-by-barter platform. Samuel understood the vision from day one and executed flawlessly.",
+                name: "Mr Silver",
                 role: "Founder",
-                company: "ShopEasy Nigeria",
-                initials: "FB",
+                company: "Erlivus",
+                tag: "Mobile App",
+                initials: "MS",
                 color: "#a78bfa",
+              },
+              {
+                quote: "Sastech built our entire tech infrastructure — custom AI agents, automation pipelines, and intelligent systems that now run our logistics operations end-to-end. Game changer.",
+                name: "Trucksoft",
+                role: "Operations",
+                company: "Trucksoft Logistics",
+                tag: "AI Systems & Automation",
+                initials: "TS",
+                color: "#f59e0b",
               },
             ].map((t, i) => (
               <Reveal key={t.name} delay={i * 0.1}>
                 <div className="glass-panel rounded-2xl border border-slate-200 dark:border-white/10 hover:border-[#38bdf8]/30 transition-all duration-500 p-8 flex flex-col h-full">
-                  {/* Stars */}
-                  <div className="flex gap-1 mb-6">
-                    {[...Array(5)].map((_, s) => (
-                      <svg key={s} className="w-4 h-4 text-amber-400 fill-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    ))}
+                  <div className="flex items-center justify-between mb-6">
+                    {/* Stars */}
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, s) => (
+                        <svg key={s} className="w-4 h-4 fill-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                      ))}
+                    </div>
+                    <span className="text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full border" style={{ color: t.color, borderColor: t.color + '40', background: t.color + '10' }}>{t.tag}</span>
                   </div>
                   <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 flex-grow italic">"{t.quote}"</p>
                   <div className="flex items-center gap-4 pt-6 border-t border-slate-200 dark:border-white/5">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-black text-white" style={{ background: `linear-gradient(135deg, ${t.color}, #2dd4bf)` }}>
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-black text-white flex-shrink-0" style={{ background: `linear-gradient(135deg, ${t.color}, #2dd4bf)` }}>
                       {t.initials}
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <p className="font-bold text-slate-900 dark:text-white text-sm">{t.name}</p>
                       <p className="text-[11px] text-slate-500 dark:text-slate-400">{t.role} · {t.company}</p>
+                      {'link' in t && t.link && (
+                        <a href={'https://' + t.link} target="_blank" rel="noopener noreferrer" className="text-[10px] text-[#38bdf8] hover:underline truncate block">{t.link}</a>
+                      )}
                     </div>
                   </div>
                 </div>
