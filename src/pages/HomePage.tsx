@@ -135,6 +135,22 @@ export default function HomePage() {
                 </Magnetic>
               </div>
             </Reveal>
+
+            {/* Social proof metrics strip */}
+            <Reveal delay={0.6}>
+              <div className="flex flex-wrap items-center gap-6 mt-8 pt-8 border-t border-slate-200 dark:border-white/5">
+                {[
+                  { value: "5+", label: "Projects Delivered" },
+                  { value: "3+", label: "Companies Served" },
+                  { value: "100%", label: "Client Satisfaction" },
+                ].map((stat) => (
+                  <div key={stat.label} className="flex items-center gap-3">
+                    <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#38bdf8] to-[#2dd4bf]">{stat.value}</span>
+                    <span className="text-[11px] font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
           </div>
 
           {/* Dashboard Mockup — coded UI, no broken image dependency */}
@@ -340,6 +356,68 @@ export default function HomePage() {
                     {stat.metric}
                   </div>
                   <div className="h-px w-12 bg-slate-200 dark:bg-white/10 mt-6 group-hover:w-full group-hover:bg-[#38bdf8] transition-all duration-1000" />
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── TESTIMONIALS ── */}
+      <section className="py-32 px-6 bg-white dark:bg-[#02040a] border-y border-slate-200 dark:border-white/5 relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#38bdf8]/5 rounded-full blur-[100px] pointer-events-none" />
+        <div className="max-w-7xl mx-auto relative z-10">
+          <SectionHeader
+            label="Client Feedback"
+            title="What Clients Say"
+            subtitle="Real results from real businesses we've worked with across Nigeria and beyond."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            {[
+              {
+                quote: "Sastech built our logistics dashboard in under 3 weeks. The AI agent alone saves my team hours every day. Absolutely worth it.",
+                name: "Tunde Adeyemi",
+                role: "Operations Director",
+                company: "Kamilight Global Logistics",
+                initials: "TA",
+                color: "#38bdf8",
+              },
+              {
+                quote: "The WhatsApp chatbot they built handles 80% of our customer enquiries automatically. Our support team can finally focus on real issues.",
+                name: "Chisom Okafor",
+                role: "CEO",
+                company: "Revenue Engines Ltd",
+                initials: "CO",
+                color: "#2dd4bf",
+              },
+              {
+                quote: "Professional, fast, and they actually understand Nigerian business context. The e-commerce platform with Paystack integration works flawlessly.",
+                name: "Fatima Bello",
+                role: "Founder",
+                company: "ShopEasy Nigeria",
+                initials: "FB",
+                color: "#a78bfa",
+              },
+            ].map((t, i) => (
+              <Reveal key={t.name} delay={i * 0.1}>
+                <div className="glass-panel rounded-2xl border border-slate-200 dark:border-white/10 hover:border-[#38bdf8]/30 transition-all duration-500 p-8 flex flex-col h-full">
+                  {/* Stars */}
+                  <div className="flex gap-1 mb-6">
+                    {[...Array(5)].map((_, s) => (
+                      <svg key={s} className="w-4 h-4 text-amber-400 fill-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    ))}
+                  </div>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 flex-grow italic">"{t.quote}"</p>
+                  <div className="flex items-center gap-4 pt-6 border-t border-slate-200 dark:border-white/5">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-black text-white" style={{ background: `linear-gradient(135deg, ${t.color}, #2dd4bf)` }}>
+                      {t.initials}
+                    </div>
+                    <div>
+                      <p className="font-bold text-slate-900 dark:text-white text-sm">{t.name}</p>
+                      <p className="text-[11px] text-slate-500 dark:text-slate-400">{t.role} · {t.company}</p>
+                    </div>
+                  </div>
                 </div>
               </Reveal>
             ))}
